@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Slide 5 - Future Scope and Conclusion</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1920px;
+    height: 1080px;
+    background-color: #f7f8fa;
+    color: #2d3142;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", "Helvetica Neue", Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 72px 96px;
+    overflow: hidden;
+  }
+  
+  /* Header */
+  .slide-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid rgba(45, 49, 66, 0.12);
+    padding-bottom: 24px;
+  }
+  .eyebrow {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #bf4520;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .eyebrow::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #bf4520;
+    border-radius: 2px;
+  }
+  .slide-title {
+    font-size: 42px;
+    font-weight: 800;
+    color: #111827;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+  .slide-subtitle {
+    font-size: 18px;
+    color: #4f5d75;
+    margin-top: 6px;
+    font-weight: 400;
+  }
+  .slide-num {
+    font-size: 18px;
+    font-weight: 700;
+    color: #4f5d75;
+    font-variant-numeric: tabular-nums;
+    padding: 6px 14px;
+    background: #ffffff;
+    border: 1px solid rgba(45, 49, 66, 0.12);
+    border-radius: 6px;
+  }
+
+  /* Two Column Roadmap Grid */
+  .roadmap-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 36px;
+    margin: 28px 0 20px 0;
+    flex-grow: 1;
+  }
+
+  .col-card {
+    background: #ffffff;
+    border: 1px solid rgba(45, 49, 66, 0.12);
+    border-radius: 8px;
+    padding: 24px 28px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .col-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(45, 49, 66, 0.08);
+  }
+
+  .col-header-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #111827;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .badge-current {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: rgba(79, 93, 117, 0.1);
+    color: #4f5d75;
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+
+  .badge-future {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: rgba(191, 69, 32, 0.1);
+    color: #bf4520;
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+
+  /* Items in current column */
+  .current-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .current-item {
+    background: #f7f8fa;
+    border: 1px solid rgba(45, 49, 66, 0.08);
+    border-radius: 6px;
+    padding: 12px 14px;
+  }
+  .current-item-title {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 4px;
+  }
+  .current-item-desc {
+    font-size: 12.5px;
+    color: #4f5d75;
+    line-height: 1.4;
+  }
+
+  /* Items in future column (2x3 mini grid) */
+  .future-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    flex-grow: 1;
+  }
+  .future-card {
+    background: rgba(191, 69, 32, 0.02);
+    border: 1px solid rgba(191, 69, 32, 0.18);
+    border-radius: 6px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .future-num {
+    font-size: 11px;
+    font-weight: 800;
+    color: #bf4520;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+  }
+  .future-title {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 4px;
+  }
+  .future-desc {
+    font-size: 12px;
+    line-height: 1.45;
+    color: #4f5d75;
+  }
+
+  /* Conclusion Banner */
+  .conclusion-banner {
+    background: #ffffff;
+    border: 1px solid rgba(191, 69, 32, 0.25);
+    border-left: 6px solid #bf4520;
+    border-radius: 8px;
+    padding: 18px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .conclusion-tag {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #bf4520;
+  }
+  .conclusion-text {
+    font-size: 15.5px;
+    font-weight: 600;
+    color: #111827;
+    line-height: 1.5;
+  }
+
+  /* Footer */
+  .slide-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(45, 49, 66, 0.1);
+    padding-top: 16px;
+    font-size: 13px;
+    color: #8892a4;
+  }
+  .footer-link {
+    color: #bf4520;
+    text-decoration: none;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+
+  <!-- Slide Header -->
+  <header class="slide-header">
+    <div>
+      <div class="eyebrow">Project Synthesis &amp; Evolutionary Roadmap</div>
+      <h1 class="slide-title">Future Scope and Conclusion</h1>
+      <p class="slide-subtitle">Distinguishing Production Features from Proposed Roadmap Additions</p>
+    </div>
+    <div class="slide-num">05 / 05</div>
+  </header>
+
+  <!-- Main Roadmap Grid -->
+  <main class="roadmap-grid">
+    <!-- Left: Existing Capabilities -->
+    <div class="col-card">
+      <div class="col-header">
+        <div class="col-header-title">Existing Capabilities</div>
+        <div class="badge-current">Production Ready</div>
+      </div>
+      <div class="current-list">
+        <div class="current-item">
+          <div class="current-item-title">45 Visual Diagram Types</div>
+          <div class="current-item-desc">Comprehensive reference library spanning architecture, data flows, sequences, and charts.</div>
+        </div>
+        <div class="current-item">
+          <div class="current-item-title">Automated Brand Onboarding</div>
+          <div class="current-item-desc">Scrapes URL palettes and fonts, verifying WCAG AA color contrast automatically.</div>
+        </div>
+        <div class="current-item">
+          <div class="current-item-title">Multi-Format Redesign &amp; Import</div>
+          <div class="current-item-desc">Native parsing and editorial redrawing of raw draw.io, Excalidraw, and Mermaid inputs.</div>
+        </div>
+        <div class="current-item">
+          <div class="current-item-title">Zero-Dependency Browser Output</div>
+          <div class="current-item-desc">Self-contained HTML + SVG files with clean responsive rendering and optional headless export.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Proposed Future Scope (6 proposals) -->
+    <div class="col-card">
+      <div class="col-header">
+        <div class="col-header-title">Proposed Future Additions</div>
+        <div class="badge-future">Exploratory Roadmap</div>
+      </div>
+      <div class="future-grid">
+        <!-- Proposal 1 -->
+        <div class="future-card">
+          <div class="future-num">Roadmap 01</div>
+          <div class="future-title">Drag-and-Drop Editing</div>
+          <div class="future-desc">An interactive browser canvas to manually nudge nodes, tweak alignment, or adjust coordinates post-generation.</div>
+        </div>
+
+        <!-- Proposal 2 -->
+        <div class="future-card">
+          <div class="future-num">Roadmap 02</div>
+          <div class="future-title">Real-Time Collaboration</div>
+          <div class="future-desc">Multi-user review threads, shared comments, and simultaneous live editing directly on diagram files.</div>
+        </div>
+
+        <!-- Proposal 3 -->
+        <div class="future-card">
+          <div class="future-num">Roadmap 03</div>
+          <div class="future-title">Multi-Format Native Export</div>
+          <div class="future-desc">Direct 1-click export to native PowerPoint (.pptx), vector PDF, and raster PNG without headless CLI tooling.</div>
+        </div>
+
+        <!-- Proposal 4 -->
+        <div class="future-card">
+          <div class="future-num">Roadmap 04</div>
+          <div class="future-title">Version History &amp; Diffs</div>
+          <div class="future-desc">Semantic change tracking and visual diffs to audit additions, removals, and rewiring across Git commits.</div>
+        </div>
+
+        <!-- Proposal 5 -->
+        <div class="future-card">
+          <div class="future-num">Roadmap 05</div>
+          <div class="future-title">Enhanced Auto-Validation</div>
+          <div class="future-desc">Automated heuristics to flag disconnected components, dangling relationships, and overlapping bounding boxes.</div>
+        </div>
+
+        <!-- Proposal 6 -->
+        <div class="future-card">
+          <div class="future-num">Roadmap 06</div>
+          <div class="future-title">Expanded Agent Ecosystem</div>
+          <div class="future-desc">Broader integration across new web IDEs, autonomous documentation bots, and CI/CD diagram generators.</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Concise Project Conclusion -->
+  <div class="conclusion-banner">
+    <div class="conclusion-tag">Academic &amp; Project Conclusion</div>
+    <div class="conclusion-text">
+      “Diagram Design demonstrates how AI agent skills can turn natural-language instructions into structured, visually consistent diagrams. Its approach can benefit software development, education, data engineering, business analysis, and technical documentation.”
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="slide-footer">
+    <span>Official GitHub Repository: <a class="footer-link" href="https://github.com/cathrynlavery/diagram-design">https://github.com/cathrynlavery/diagram-design</a> · Developer: Cathryn Lavery</span>
+    <span>MIT Open Source License</span>
+  </footer>
+
+</body>
+</html>

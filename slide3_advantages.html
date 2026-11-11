@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Slide 3 - Advantages of Diagram Design</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1920px;
+    height: 1080px;
+    background-color: #f7f8fa;
+    color: #2d3142;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", "Helvetica Neue", Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 72px 96px;
+    overflow: hidden;
+  }
+  
+  /* Header */
+  .slide-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid rgba(45, 49, 66, 0.12);
+    padding-bottom: 24px;
+  }
+  .eyebrow {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #bf4520;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .eyebrow::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #bf4520;
+    border-radius: 2px;
+  }
+  .slide-title {
+    font-size: 42px;
+    font-weight: 800;
+    color: #111827;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+  .slide-subtitle {
+    font-size: 18px;
+    color: #4f5d75;
+    margin-top: 6px;
+    font-weight: 400;
+  }
+  .slide-num {
+    font-size: 18px;
+    font-weight: 700;
+    color: #4f5d75;
+    font-variant-numeric: tabular-nums;
+    padding: 6px 14px;
+    background: #ffffff;
+    border: 1px solid rgba(45, 49, 66, 0.12);
+    border-radius: 6px;
+  }
+
+  /* 6-Card Grid Layout */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 32px;
+    margin-bottom: 24px;
+    flex-grow: 1;
+  }
+
+  .adv-card {
+    background: #ffffff;
+    border: 1px solid rgba(45, 49, 66, 0.12);
+    border-radius: 8px;
+    padding: 24px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .card-top {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+
+  .icon-box {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background: rgba(191, 69, 32, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .icon-box svg {
+    width: 22px;
+    height: 22px;
+    stroke: #bf4520;
+    stroke-width: 2;
+    fill: none;
+  }
+
+  .adv-heading {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1.25;
+  }
+
+  .adv-text {
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: #4f5d75;
+  }
+
+  /* Bottom Takeaway Banner */
+  .takeaway-banner {
+    background: #ffffff;
+    border: 1px solid rgba(191, 69, 32, 0.25);
+    border-left: 6px solid #bf4520;
+    border-radius: 8px;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .takeaway-tag {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #bf4520;
+    background: rgba(191, 69, 32, 0.08);
+    padding: 5px 10px;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+
+  .takeaway-text {
+    font-size: 16px;
+    font-weight: 600;
+    color: #111827;
+    line-height: 1.4;
+  }
+
+  /* Footer */
+  .slide-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(45, 49, 66, 0.1);
+    padding-top: 16px;
+    font-size: 13px;
+    color: #8892a4;
+  }
+</style>
+</head>
+<body>
+
+  <!-- Slide Header -->
+  <header class="slide-header">
+    <div>
+      <div class="eyebrow">Academic &amp; Technical Analysis · Value Proposition</div>
+      <h1 class="slide-title">Advantages of Diagram Design</h1>
+      <p class="slide-subtitle">Six Structural Benefits for Engineering Teams and Technical Communicators</p>
+    </div>
+    <div class="slide-num">03 / 05</div>
+  </header>
+
+  <!-- 6 Visual Cards Grid -->
+  <main class="grid-container">
+    <!-- Benefit 1 -->
+    <div class="adv-card">
+      <div class="card-top">
+        <div class="icon-box">
+          <!-- Sparkles / Less Effort Icon -->
+          <svg viewBox="0 0 24 24"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/></svg>
+        </div>
+        <div class="adv-heading">Reduced Manual Effort</div>
+      </div>
+      <div class="adv-text">Automates tedious vector alignment, box sizing, and manual coordinate snapping, freeing developers from manual drag-and-drop canvas editing.</div>
+    </div>
+
+    <!-- Benefit 2 -->
+    <div class="adv-card">
+      <div class="card-top">
+        <div class="icon-box">
+          <!-- Grid / Hierarchy Icon -->
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        </div>
+        <div class="adv-heading">Consistent Visual Hierarchy</div>
+      </div>
+      <div class="adv-text">Enforces a disciplined 4px spatial grid, crisp 1px hairlines, and a single focal accent color to maintain clean editorial clarity across all outputs.</div>
+    </div>
+
+    <!-- Benefit 3 -->
+    <div class="adv-card">
+      <div class="card-top">
+        <div class="icon-box">
+          <!-- Message / Natural Language Icon -->
+          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div class="adv-heading">Natural-Language Creation</div>
+      </div>
+      <div class="adv-text">Enables users to describe and modify complex system topologies using everyday technical prose rather than intricate coordinate scripting.</div>
+    </div>
+
+    <!-- Benefit 4 -->
+    <div class="adv-card">
+      <div class="card-top">
+        <div class="icon-box">
+          <!-- Layers / Broad Coverage Icon -->
+          <svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        </div>
+        <div class="adv-heading">Diverse Technical Scenarios</div>
+      </div>
+      <div class="adv-text">Covers 45 standardized diagram specifications spanning high-level architecture, low-level schemas, workflows, Sankey flows, and 3D axonometric plans.</div>
+    </div>
+
+    <!-- Benefit 5 -->
+    <div class="adv-card">
+      <div class="card-top">
+        <div class="icon-box">
+          <!-- Browser / HTML SVG Icon -->
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <div class="adv-heading">Portable Browser Output</div>
+      </div>
+      <div class="adv-text">Produces self-contained HTML files with inline SVG that open instantly in any web browser without specialized viewer applications or proprietary software locks.</div>
+    </div>
+
+    <!-- Benefit 6 -->
+    <div class="adv-card">
+      <div class="card-top">
+        <div class="icon-box">
+          <!-- Plug / Environment Compatibility Icon -->
+          <svg viewBox="0 0 24 24"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg>
+        </div>
+        <div class="adv-heading">Cross-Agent Compatibility</div>
+      </div>
+      <div class="adv-text">Operates uniformly across multiple supported AI coding tools including Cursor, Claude Code, Codex, GitHub Copilot, Qoder, and Factory Droid.</div>
+    </div>
+  </main>
+
+  <!-- Concluding Takeaway -->
+  <div class="takeaway-banner">
+    <div class="takeaway-tag">Core Takeaway</div>
+    <div class="takeaway-text">“Diagram Design helps developers communicate complex systems more clearly while reducing the effort required to create and style diagrams.”</div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="slide-footer">
+    <span>Diagram Design Presentation · Technical Project Briefing</span>
+    <span>Source: github.com/cathrynlavery/diagram-design</span>
+  </footer>
+
+</body>
+</html>

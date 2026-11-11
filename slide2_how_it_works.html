@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Slide 2 - How It Works</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1920px;
+    height: 1080px;
+    background-color: #f7f8fa;
+    color: #2d3142;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", "Helvetica Neue", Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 72px 96px;
+    overflow: hidden;
+  }
+  
+  /* Header */
+  .slide-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid rgba(45, 49, 66, 0.12);
+    padding-bottom: 24px;
+  }
+  .eyebrow {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #bf4520;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .eyebrow::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #bf4520;
+    border-radius: 2px;
+  }
+  .slide-title {
+    font-size: 42px;
+    font-weight: 800;
+    color: #111827;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+  .slide-subtitle {
+    font-size: 18px;
+    color: #4f5d75;
+    margin-top: 6px;
+    font-weight: 400;
+  }
+  .slide-num {
+    font-size: 18px;
+    font-weight: 700;
+    color: #4f5d75;
+    font-variant-numeric: tabular-nums;
+    padding: 6px 14px;
+    background: #ffffff;
+    border: 1px solid rgba(45, 49, 66, 0.12);
+    border-radius: 6px;
+  }
+
+  /* 4-Stage Horizontal Process */
+  .process-container {
+    margin-top: 28px;
+    background: #ffffff;
+    border: 1px solid rgba(45, 49, 66, 0.12);
+    border-radius: 8px;
+    padding: 24px 28px;
+  }
+  .process-title {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #4f5d75;
+    margin-bottom: 18px;
+  }
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    position: relative;
+  }
+  .step-card {
+    background: #f7f8fa;
+    border: 1px solid rgba(45, 49, 66, 0.1);
+    border-radius: 6px;
+    padding: 18px 20px;
+    position: relative;
+  }
+  .step-card.active-step {
+    border-color: rgba(191, 69, 32, 0.3);
+    background: rgba(191, 69, 32, 0.03);
+  }
+  .step-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    background: #bf4520;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 4px;
+    margin-bottom: 12px;
+  }
+  .step-badge.neutral {
+    background: #4f5d75;
+  }
+  .step-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 6px;
+  }
+  .step-desc {
+    font-size: 13.5px;
+    line-height: 1.45;
+    color: #4f5d75;
+  }
+
+  /* Key Capabilities Grid */
+  .capabilities-section {
+    margin-top: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .capabilities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .cap-card {
+    background: #ffffff;
+    border: 1px solid rgba(45, 49, 66, 0.12);
+    border-radius: 8px;
+    padding: 16px 20px;
+  }
+  .cap-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+  .cap-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 5px;
+    background: rgba(191, 69, 32, 0.08);
+    color: #bf4520;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .cap-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+  }
+  .cap-text {
+    font-size: 13px;
+    line-height: 1.45;
+    color: #4f5d75;
+  }
+
+  /* Callout footer */
+  .callout-strip {
+    background: rgba(45, 49, 66, 0.04);
+    border: 1px solid rgba(45, 49, 66, 0.12);
+    border-radius: 6px;
+    padding: 12px 18px;
+    font-size: 13.5px;
+    line-height: 1.4;
+    color: #2d3142;
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .callout-strip strong {
+    color: #bf4520;
+  }
+
+  /* Footer */
+  .slide-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(45, 49, 66, 0.1);
+    padding-top: 16px;
+    font-size: 13px;
+    color: #8892a4;
+  }
+</style>
+</head>
+<body>
+
+  <!-- Slide Header -->
+  <header class="slide-header">
+    <div>
+      <div class="eyebrow">Generation Pipeline &amp; Core Architecture</div>
+      <h1 class="slide-title">How It Works</h1>
+      <p class="slide-subtitle">Four-Stage Operational Pipeline &amp; Core Technical Capabilities</p>
+    </div>
+    <div class="slide-num">02 / 05</div>
+  </header>
+
+  <!-- 4-Stage Horizontal Process -->
+  <section class="process-container">
+    <div class="process-title">4-Stage Generation Pipeline</div>
+    <div class="process-steps">
+      <!-- Step 1 -->
+      <div class="step-card">
+        <div class="step-badge neutral">1</div>
+        <div class="step-name">Describe</div>
+        <div class="step-desc">The user describes the target architecture, workflow, data model, or sequence using conversational, natural-language prompts.</div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="step-card active-step">
+        <div class="step-badge">2</div>
+        <div class="step-name">Select &amp; Plan</div>
+        <div class="step-desc">The AI agent identifies the best-fit diagram type from 45 specifications, loads layout budgets, and calculates coordinates on a strict 4px grid.</div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="step-card active-step">
+        <div class="step-badge">3</div>
+        <div class="step-name">Generate</div>
+        <div class="step-desc">The agent writes clean, self-contained semantic HTML embedding responsive inline SVG, 1px hairlines, and accessible ARIA attributes.</div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="step-card">
+        <div class="step-badge neutral">4</div>
+        <div class="step-name">Render &amp; View</div>
+        <div class="step-desc">The user opens the resulting <code style="font-family: monospace; font-size: 12px; background: #e5e7eb; padding: 2px 4px; border-radius: 3px;">.html</code> file immediately in any browser with zero compilation, dependencies, or external scripts.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Capabilities -->
+  <section class="capabilities-section">
+    <div class="capabilities-grid">
+      <!-- Cap 1 -->
+      <div class="cap-card">
+        <div class="cap-header">
+          <div class="cap-icon">01</div>
+          <div class="cap-title">45 Diagram Types</div>
+        </div>
+        <div class="cap-text">Comprehensive coverage: Architecture, Sequence, ER, State, Medallion, Sankey, Radar, Gantt, Axonometric, and more.</div>
+      </div>
+
+      <!-- Cap 2 -->
+      <div class="cap-card">
+        <div class="cap-header">
+          <div class="cap-icon">02</div>
+          <div class="cap-title">Natural-Language Creation</div>
+        </div>
+        <div class="cap-text">Full lifecycle from draft to refinement handled conversationally—request additions, changes, or rewiring in plain words.</div>
+      </div>
+
+      <!-- Cap 3 -->
+      <div class="cap-card">
+        <div class="cap-header">
+          <div class="cap-icon">03</div>
+          <div class="cap-title">Consistent Visual Styling</div>
+        </div>
+        <div class="cap-text">Disciplined editorial aesthetic: crisp 4px alignment, 1px hairlines, no drop shadows, and 1 focal accent color.</div>
+      </div>
+
+      <!-- Cap 4 -->
+      <div class="cap-card">
+        <div class="cap-header">
+          <div class="cap-icon">04</div>
+          <div class="cap-title">Brand Customisation</div>
+        </div>
+        <div class="cap-text">60-second onboarding pulls colors and typography from any website URL, verifying WCAG AA contrast automatically.</div>
+      </div>
+
+      <!-- Cap 5 -->
+      <div class="cap-card">
+        <div class="cap-header">
+          <div class="cap-icon">05</div>
+          <div class="cap-title">Import &amp; Redesign</div>
+        </div>
+        <div class="cap-text">Ingests raw <code style="font-family: monospace; font-size: 11px;">.drawio</code>, Mermaid, and Excalidraw files, completely redrawing them into branded editorial diagrams.</div>
+      </div>
+
+      <!-- Cap 6 -->
+      <div class="cap-card">
+        <div class="cap-header">
+          <div class="cap-icon">06</div>
+          <div class="cap-title">Self-Contained Output</div>
+        </div>
+        <div class="cap-text">Single portable HTML files with inline SVG; zero external runtime dependencies, node packages, or rendering servers.</div>
+      </div>
+    </div>
+
+    <!-- Architectural Clarity Strip -->
+    <div class="callout-strip">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#bf4520" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+      <div><strong>Important Architectural Note:</strong> Diagram Design does not train or host an AI model. It is an agent skill that equips general-purpose LLMs with visual taste, spatial constraints, and architectural templates.</div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="slide-footer">
+    <span>Diagram Design Presentation · Technical Project Briefing</span>
+    <span>Source: github.com/cathrynlavery/diagram-design</span>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Slide 4 - Where Can Diagram Design Be Used?</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1920px;
+    height: 1080px;
+    background-color: #f7f8fa;
+    color: #2d3142;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", "Helvetica Neue", Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 72px 96px;
+    overflow: hidden;
+  }
+  
+  /* Header */
+  .slide-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid rgba(45, 49, 66, 0.12);
+    padding-bottom: 24px;
+  }
+  .eyebrow {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #bf4520;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .eyebrow::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #bf4520;
+    border-radius: 2px;
+  }
+  .slide-title {
+    font-size: 42px;
+    font-weight: 800;
+    color: #111827;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+  .slide-subtitle {
+    font-size: 18px;
+    color: #4f5d75;
+    margin-top: 6px;
+    font-weight: 400;
+  }
+  .slide-num {
+    font-size: 18px;
+    font-weight: 700;
+    color: #4f5d75;
+    font-variant-numeric: tabular-nums;
+    padding: 6px 14px;
+    background: #ffffff;
+    border: 1px solid rgba(45, 49, 66, 0.12);
+    border-radius: 6px;
+  }
+
+  /* Center Hub Layout */
+  .diagram-hub-section {
+    position: relative;
+    margin: 24px 0 16px 0;
+    flex-grow: 1;
+    background: #ffffff;
+    border: 1px solid rgba(45, 49, 66, 0.12);
+    border-radius: 8px;
+    padding: 24px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* Practical Example Callout */
+  .example-card {
+    background: #ffffff;
+    border: 1px solid rgba(191, 69, 32, 0.25);
+    border-left: 6px solid #bf4520;
+    border-radius: 8px;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .example-badge {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #bf4520;
+    background: rgba(191, 69, 32, 0.08);
+    padding: 5px 10px;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+  .example-text {
+    font-size: 15px;
+    color: #111827;
+    line-height: 1.45;
+  }
+  .example-text strong {
+    color: #bf4520;
+  }
+
+  /* Footer */
+  .slide-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(45, 49, 66, 0.1);
+    padding-top: 16px;
+    font-size: 13px;
+    color: #8892a4;
+  }
+</style>
+</head>
+<body>
+
+  <!-- Slide Header -->
+  <header class="slide-header">
+    <div>
+      <div class="eyebrow">Application Ecosystem &amp; Industry Use Cases</div>
+      <h1 class="slide-title">Where Can Diagram Design Be Used?</h1>
+      <p class="slide-subtitle">Six Technical Domains Powered by Structured Natural-Language Visualisation</p>
+    </div>
+    <div class="slide-num">04 / 05</div>
+  </header>
+
+  <!-- Central Connected Hub Diagram -->
+  <section class="diagram-hub-section">
+    <svg viewBox="0 0 1680 490" width="100%" height="490" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <!-- Gradients and markers -->
+        <filter id="card-shadow" x="-5%" y="-5%" width="110%" height="115%">
+          <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#2d3142" flood-opacity="0.04"/>
+        </filter>
+      </defs>
+
+      <!-- Connection Lines radiating from Center (840, 245) -->
+      <!-- Left side lines -->
+      <path d="M 690 245 C 550 245, 420 85, 340 85" stroke="rgba(191,69,32,0.3)" stroke-width="2" fill="none" stroke-dasharray="4,4"/>
+      <path d="M 690 245 C 530 245, 430 245, 340 245" stroke="rgba(191,69,32,0.3)" stroke-width="2" fill="none" stroke-dasharray="4,4"/>
+      <path d="M 690 245 C 550 245, 420 405, 340 405" stroke="rgba(191,69,32,0.3)" stroke-width="2" fill="none" stroke-dasharray="4,4"/>
+
+      <!-- Right side lines -->
+      <path d="M 990 245 C 1130 245, 1260 85, 1340 85" stroke="rgba(191,69,32,0.3)" stroke-width="2" fill="none" stroke-dasharray="4,4"/>
+      <path d="M 990 245 C 1150 245, 1250 245, 1340 245" stroke="rgba(191,69,32,0.3)" stroke-width="2" fill="none" stroke-dasharray="4,4"/>
+      <path d="M 990 245 C 1130 245, 1260 405, 1340 405" stroke="rgba(191,69,32,0.3)" stroke-width="2" fill="none" stroke-dasharray="4,4"/>
+
+      <!-- CENTER HUB: Diagram Design Engine -->
+      <g transform="translate(690, 165)">
+        <rect width="300" height="160" rx="12" fill="#ffffff" stroke="#bf4520" stroke-width="2.5" filter="url(#card-shadow)"/>
+        <rect x="0" y="0" width="300" height="38" rx="12" fill="#bf4520"/>
+        <rect x="0" y="26" width="300" height="12" fill="#bf4520"/>
+        <text x="150" y="24" text-anchor="middle" font-size="12" font-weight="800" fill="#ffffff" letter-spacing="0.1em" font-family="sans-serif">CENTRAL SKILL CORE</text>
+        <text x="150" y="74" text-anchor="middle" font-size="20" font-weight="800" fill="#111827" font-family="sans-serif">Diagram Design</text>
+        <text x="150" y="98" text-anchor="middle" font-size="13" font-weight="600" fill="#4f5d75" font-family="sans-serif">AI Agent Knowledge Framework</text>
+        <line x1="40" y1="112" x2="260" y2="112" stroke="rgba(45,49,66,0.1)" stroke-width="1"/>
+        <text x="150" y="132" text-anchor="middle" font-size="12" fill="#bf4520" font-weight="700" font-family="sans-serif">45 Visual Types · 4px Grid · Editorial</text>
+      </g>
+
+      <!-- DOMAIN 1: Software Development (Top Left) -->
+      <g transform="translate(20, 20)">
+        <rect width="320" height="130" rx="8" fill="#f7f8fa" stroke="rgba(45,49,66,0.12)" stroke-width="1.5"/>
+        <rect x="0" y="0" width="320" height="28" rx="8" fill="#eaedf2"/>
+        <rect x="0" y="20" width="320" height="8" fill="#eaedf2"/>
+        <text x="16" y="19" font-size="11" font-weight="700" fill="#4f5d75" font-family="sans-serif">DOMAIN 01</text>
+        <text x="16" y="52" font-size="16" font-weight="700" fill="#111827" font-family="sans-serif">Software Development</text>
+        <text x="16" y="74" font-size="12.5" fill="#4f5d75" font-family="sans-serif">• Application architecture &amp; API interactions</text>
+        <text x="16" y="94" font-size="12.5" fill="#4f5d75" font-family="sans-serif">• Sequence diagrams &amp; auth flows</text>
+        <text x="16" y="114" font-size="12.5" fill="#4f5d75" font-family="sans-serif">• Microservice dependencies &amp; DB schemas</text>
+      </g>
+
+      <!-- DOMAIN 2: Education & Academia (Mid Left) -->
+      <g transform="translate(20, 180)">
+        <rect width="320" height="130" rx="8" fill="#f7f8fa" stroke="rgba(45,49,66,0.12)" stroke-width="1.5"/>
+        <rect x="0" y="0" width="320" height="28" rx="8" fill="#eaedf2"/>
+        <rect x="0" y="20" width="320" height="8" fill="#eaedf2"/>
+        <text x="16" y="19" font-size="11" font-weight="700" fill="#4f5d75" font-family="sans-serif">DOMAIN 02</text>
+        <text x="16" y="52" font-size="16" font-weight="700" fill="#111827" font-family="sans-serif">Education &amp; Teaching</text>
+        <text x="16" y="74" font-size="12.5" fill="#4f5d75" font-family="sans-serif">• Computer science algorithms &amp; logic</text>
+        <text x="16" y="94" font-size="12.5" fill="#4f5d75" font-family="sans-serif">• Core programming concepts &amp; trees</text>
+        <text x="16" y="114" font-size="12.5" fill="#4f5d75" font-family="sans-serif">• Structured lecture slides &amp; courseware</text>
+      </g>
+
+      <!-- DOMAIN 3: Data Engineering (Bottom Left) -->
+      <g transform="translate(20, 340)">
+        <rect width="320" height="130" rx="8" fill="#f7f8fa" stroke="rgba(45,49,66,0.12)" stroke-width="1.5"/>
+        <rect x="0" y="0" width="320" height="28" rx="8" fill="#eaedf2"/>
+        <rect x="0" y="20" width="320" height="8" fill="#eaedf2"/>
+        <text x="16" y="19" font-size="11" font-weight="700" fill="#4f5d75" font-family="sans-serif">DOMAIN 03</text>
+        <text x="16" y="52" font-size="16" font-weight="700" fill="#111827" font-family="sans-serif">Data Engineering</text>
+        <text x="16" y="74" font-size="12.5" fill="#4f5d75" font-family="sans-serif">• Multi-tier Medallion pipelines (Bronze/Silver/Gold)</text>
+        <text x="16" y="94" font-size="12.5" fill="#4f5d75" font-family="sans-serif">• Role-scoped data flow &amp; ETL integrations</text>
+        <text x="16" y="114" font-size="12.5" fill="#4f5d75" font-family="sans-serif">• Entity-relationship &amp; warehouse schemas</text>
+      </g>
+
+      <!-- DOMAIN 4: Business Analysis (Top Right) -->
+      <g transform="translate(1340, 20)">
+        <rect width="320" height="130" rx="8" fill="#f7f8fa" stroke="rgba(45,49,66,0.12)" stroke-width="1.5"/>
+        <rect x="0" y="0" width="320" height="28" rx="8" fill="#eaedf2"/>
+        <rect x="0" y="20" width="320" height="8" fill="#eaedf2"/>
+        <text x="16" y="19" font-size="11" font-weight="700" fill="#4f5d75" font-family="sans-serif">DOMAIN 04</text>
+        <text x="16" y="52" font-size="16" font-weight="700" fill="#111827" font-family="sans-serif">Business Analysis</text>
+        <text x="16" y="74" font-size="12.5" fill="#4f5d75" font-family="sans-serif">• End-to-end business process re-engineering</text>
+        <text x="16" y="94" font-size="12.5" fill="#4f5d75" font-family="sans-serif">• Decision logic flowcharts &amp; audit trails</text>
+        <text x="16" y="114" font-size="12.5" fill="#4f5d75" font-family="sans-serif">• Customer journey maps &amp; touchpoints</text>
+      </g>
+
+      <!-- DOMAIN 5: Project Management (Mid Right) -->
+      <g transform="translate(1340, 180)">
+        <rect width="320" height="130" rx="8" fill="#f7f8fa" stroke="rgba(45,49,66,0.12)" stroke-width="1.5"/>
+        <rect x="0" y="0" width="320" height="28" rx="8" fill="#eaedf2"/>
+        <rect x="0" y="20" width="320" height="8" fill="#eaedf2"/>
+        <text x="16" y="19" font-size="11" font-weight="700" fill="#4f5d75" font-family="sans-serif">DOMAIN 05</text>
+        <text x="16" y="52" font-size="16" font-weight="700" fill="#111827" font-family="sans-serif">Project Management</text>
+        <text x="16" y="74" font-size="12.5" fill="#4f5d75" font-family="sans-serif">• Strategic milestone timelines &amp; phases</text>
+        <text x="16" y="94" font-size="12.5" fill="#4f5d75" font-family="sans-serif">• Critical path task dependencies &amp; Gantt charts</text>
+        <text x="16" y="114" font-size="12.5" fill="#4f5d75" font-family="sans-serif">• Product roadmaps &amp; release story maps</text>
+      </g>
+
+      <!-- DOMAIN 6: Technical Documentation (Bottom Right) -->
+      <g transform="translate(1340, 340)">
+        <rect width="320" height="130" rx="8" fill="#f7f8fa" stroke="rgba(45,49,66,0.12)" stroke-width="1.5"/>
+        <rect x="0" y="0" width="320" height="28" rx="8" fill="#eaedf2"/>
+        <rect x="0" y="20" width="320" height="8" fill="#eaedf2"/>
+        <text x="16" y="19" font-size="11" font-weight="700" fill="#4f5d75" font-family="sans-serif">DOMAIN 06</text>
+        <text x="16" y="52" font-size="16" font-weight="700" fill="#111827" font-family="sans-serif">Technical Documentation</text>
+        <text x="16" y="74" font-size="12.5" fill="#4f5d75" font-family="sans-serif">• GitHub README header architecture visuals</text>
+        <text x="16" y="94" font-size="12.5" fill="#4f5d75" font-family="sans-serif">• Developer onboarding guides &amp; system RFCs</text>
+        <text x="16" y="114" font-size="12.5" fill="#4f5d75" font-family="sans-serif">• Architectural Decision Records (ADRs)</text>
+      </g>
+    </svg>
+  </section>
+
+  <!-- Practical Walkthrough Box -->
+  <div class="example-card">
+    <div class="example-badge">Practical Walkthrough</div>
+    <div class="example-text">
+      “A developer describes a web application’s frontend, backend, database, and cache. The AI agent uses <strong>Diagram Design</strong> to create a structured architecture diagram with clean boundaries, precise 4px alignment, and zero design debt.”
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="slide-footer">
+    <span>Diagram Design Presentation · Technical Project Briefing</span>
+    <span>Source: github.com/cathrynlavery/diagram-design</span>
+  </footer>
+
+</body>
+</html>

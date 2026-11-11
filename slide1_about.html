@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Slide 1 - Diagram Design: AI-Powered Diagram Generation</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1920px;
+    height: 1080px;
+    background-color: #f7f8fa;
+    color: #2d3142;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", "Helvetica Neue", Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 72px 96px;
+    overflow: hidden;
+  }
+  
+  /* Header section */
+  .slide-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid rgba(45, 49, 66, 0.12);
+    padding-bottom: 24px;
+  }
+  .eyebrow {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #bf4520;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .eyebrow::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #bf4520;
+    border-radius: 2px;
+  }
+  .slide-title {
+    font-size: 42px;
+    font-weight: 800;
+    color: #111827;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+  .slide-subtitle {
+    font-size: 18px;
+    color: #4f5d75;
+    margin-top: 6px;
+    font-weight: 400;
+  }
+  .slide-num {
+    font-size: 18px;
+    font-weight: 700;
+    color: #4f5d75;
+    font-variant-numeric: tabular-nums;
+    padding: 6px 14px;
+    background: #ffffff;
+    border: 1px solid rgba(45, 49, 66, 0.12);
+    border-radius: 6px;
+  }
+
+  /* Main content layout */
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin: 36px 0;
+    flex-grow: 1;
+  }
+
+  .left-col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .right-col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .card {
+    background: #ffffff;
+    border: 1px solid rgba(45, 49, 66, 0.12);
+    border-radius: 8px;
+    padding: 24px 28px;
+  }
+
+  .card-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .card-title .tag {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: rgba(191, 69, 32, 0.08);
+    color: #bf4520;
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+
+  .card-body {
+    font-size: 15px;
+    line-height: 1.55;
+    color: #4f5d75;
+  }
+
+  .card-body strong {
+    color: #111827;
+  }
+
+  .distinction-box {
+    background: rgba(191, 69, 32, 0.04);
+    border: 1px solid rgba(191, 69, 32, 0.2);
+    border-left: 4px solid #bf4520;
+    border-radius: 6px;
+    padding: 16px 20px;
+    font-size: 14.5px;
+    line-height: 1.5;
+    color: #2d3142;
+  }
+
+  /* Workflow diagram container */
+  .workflow-card {
+    background: #ffffff;
+    border: 1px solid rgba(45, 49, 66, 0.12);
+    border-radius: 8px;
+    padding: 24px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+  }
+
+  .workflow-title {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #4f5d75;
+    margin-bottom: 20px;
+  }
+
+  /* Technical stack specs */
+  .tech-specs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .spec-item {
+    background: #f7f8fa;
+    border: 1px solid rgba(45, 49, 66, 0.08);
+    border-radius: 6px;
+    padding: 12px 14px;
+  }
+
+  .spec-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #8892a4;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+  }
+
+  .spec-val {
+    font-size: 14px;
+    font-weight: 700;
+    color: #111827;
+  }
+
+  /* Footer */
+  .slide-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(45, 49, 66, 0.1);
+    padding-top: 16px;
+    font-size: 13px;
+    color: #8892a4;
+  }
+</style>
+</head>
+<body>
+
+  <!-- Slide Header -->
+  <header class="slide-header">
+    <div>
+      <div class="eyebrow">Academic & Technical Briefing · Project Overview</div>
+      <h1 class="slide-title">Diagram Design: AI-Powered Diagram Generation</h1>
+      <p class="slide-subtitle">Created by Cathryn Lavery (LittleMight) · Open-Source AI Agent Skill</p>
+    </div>
+    <div class="slide-num">01 / 05</div>
+  </header>
+
+  <!-- Main Grid -->
+  <main class="main-grid">
+    <!-- Left Column: Context & Core Problem -->
+    <div class="left-col">
+      <div class="card">
+        <div class="card-title">
+          <span>Project Overview &amp; Purpose</span>
+          <span class="tag">Open Source</span>
+        </div>
+        <div class="card-body">
+          <strong>Diagram Design</strong> is an open-source Agent Skill developed by designer and entrepreneur <strong>Cathryn Lavery</strong>. It empowers AI coding agents to generate publication-grade technical diagrams as single, self-contained HTML files with inline SVG—free of bloated libraries, heavy renderers, or external dependencies.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">
+          <span>The Traditional Diagramming Problem</span>
+          <span class="tag">Problem Space</span>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li style="margin-bottom: 8px;"><strong>Manual Canvas Dragging:</strong> Tools like Figma and draw.io require tedious manual alignment, box nudging, and color matching that disrupts developer focus.</li>
+            <li><strong>Generic Automated Tools:</strong> Standard text-to-diagram generators (e.g., default Mermaid or PlantUML) often produce visually unrefined layouts with excessive shadows, rigid auto-spacing, and non-branded themes.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="distinction-box">
+        <strong>Key Architectural Distinction:</strong> Diagram Design is <em>not</em> a standalone desktop graphical editor or an independent AI model. It is an <strong>agent skill</strong>—a structured knowledge framework that teaches host AI coding agents (Claude Code, Cursor, Codex) how to design with disciplined editorial taste.
+      </div>
+    </div>
+
+    <!-- Right Column: Visual Workflow & Tech Stack -->
+    <div class="right-col">
+      <div class="workflow-card">
+        <div class="workflow-title">Generation Workflow Architecture</div>
+        
+        <!-- SVG Visual Workflow -->
+        <svg viewBox="0 0 780 230" width="100%" height="230" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#4f5d75"/>
+            </marker>
+          </defs>
+
+          <!-- Step 1: User Input -->
+          <g transform="translate(10, 25)">
+            <rect width="210" height="150" rx="8" fill="#f7f8fa" stroke="rgba(45,49,66,0.15)" stroke-width="1.5"/>
+            <rect x="0" y="0" width="210" height="32" rx="8" fill="#eaedf2"/>
+            <rect x="0" y="24" width="210" height="8" fill="#eaedf2"/>
+            <text x="16" y="21" font-size="12" font-weight="700" fill="#4f5d75" font-family="sans-serif">INPUT</text>
+            <text x="16" y="60" font-size="15" font-weight="700" fill="#111827" font-family="sans-serif">Natural-Language</text>
+            <text x="16" y="80" font-size="15" font-weight="700" fill="#111827" font-family="sans-serif">Prompt</text>
+            <text x="16" y="110" font-size="12" fill="#4f5d75" font-family="monospace">"Architecture of web</text>
+            <text x="16" y="128" font-size="12" fill="#4f5d75" font-family="monospace">app: api, db, redis"</text>
+          </g>
+
+          <!-- Arrow 1 -> 2 -->
+          <line x1="225" y1="100" x2="275" y2="100" stroke="#4f5d75" stroke-width="2" marker-end="url(#arrow)"/>
+
+          <!-- Step 2: Agent + Skill -->
+          <g transform="translate(285, 15)">
+            <rect width="230" height="170" rx="8" fill="rgba(191,69,32,0.04)" stroke="#bf4520" stroke-width="1.5"/>
+            <rect x="0" y="0" width="230" height="34" rx="8" fill="#bf4520"/>
+            <rect x="0" y="26" width="230" height="8" fill="#bf4520"/>
+            <text x="16" y="22" font-size="12" font-weight="700" fill="#ffffff" font-family="sans-serif">PROCESSING CORE</text>
+            <text x="16" y="64" font-size="16" font-weight="800" fill="#bf4520" font-family="sans-serif">AI Agent + Skill</text>
+            <text x="16" y="88" font-size="12.5" font-weight="600" fill="#111827" font-family="sans-serif">Diagram Design System</text>
+            <text x="16" y="112" font-size="12" fill="#4f5d75" font-family="sans-serif">• 45 diagram type rules</text>
+            <text x="16" y="132" font-size="12" fill="#4f5d75" font-family="sans-serif">• 4px strict coordinate grid</text>
+            <text x="16" y="152" font-size="12" fill="#4f5d75" font-family="sans-serif">• 1 focal accent color rule</text>
+          </g>
+
+          <!-- Arrow 2 -> 3 -->
+          <line x1="520" y1="100" x2="570" y2="100" stroke="#4f5d75" stroke-width="2" marker-end="url(#arrow)"/>
+
+          <!-- Step 3: Styled Diagram Output -->
+          <g transform="translate(580, 25)">
+            <rect width="190" height="150" rx="8" fill="#f7f8fa" stroke="rgba(45,49,66,0.15)" stroke-width="1.5"/>
+            <rect x="0" y="0" width="190" height="32" rx="8" fill="#eaedf2"/>
+            <rect x="0" y="24" width="190" height="8" fill="#eaedf2"/>
+            <text x="16" y="21" font-size="12" font-weight="700" fill="#4f5d75" font-family="sans-serif">OUTPUT</text>
+            <text x="16" y="60" font-size="15" font-weight="700" fill="#111827" font-family="sans-serif">Styled Diagram</text>
+            <text x="16" y="80" font-size="15" font-weight="700" fill="#111827" font-family="sans-serif">File (.html)</text>
+            <text x="16" y="110" font-size="12" fill="#4f5d75" font-family="sans-serif">• Self-contained SVG</text>
+            <text x="16" y="130" font-size="12" fill="#4f5d75" font-family="sans-serif">• Double-click &amp; view</text>
+          </g>
+        </svg>
+
+        <!-- Technical Stack Specifications -->
+        <div class="tech-specs">
+          <div class="spec-item">
+            <div class="spec-label">Core Medium</div>
+            <div class="spec-val">Self-Contained HTML</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Graphics Engine</div>
+            <div class="spec-val">Inline Responsive SVG</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-label">Runtime Dep</div>
+            <div class="spec-val">Zero / Browser Native</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="slide-footer">
+    <span>Diagram Design Presentation · Technical Project Briefing</span>
+    <span>Source: github.com/cathrynlavery/diagram-design</span>
+  </footer>
+
+</body>
+</html>

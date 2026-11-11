@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diagram Design - Academic Presentation Deck</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #11141a;
+    color: #f5f5f5;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    overflow-x: hidden;
+  }
+
+  .nav-bar {
+    width: 100%;
+    max-width: 1280px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding: 0 4px;
+  }
+
+  .deck-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .brand-badge {
+    background: #bf4520;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
+
+  .deck-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #e5e7eb;
+  }
+
+  .download-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #e5e7eb;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+
+  .btn:hover {
+    background: rgba(255, 255, 255, 0.16);
+    color: #ffffff;
+  }
+
+  .btn-accent {
+    background: #bf4520;
+    border-color: #bf4520;
+    color: #ffffff;
+  }
+  .btn-accent:hover {
+    background: #d8542b;
+  }
+
+  /* Presentation Stage */
+  .stage-container {
+    width: 100%;
+    max-width: 1280px;
+    aspect-ratio: 16 / 9;
+    position: relative;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+  }
+
+  .slide.active {
+    display: block;
+  }
+
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  /* Controls */
+  .controls-bar {
+    width: 100%;
+    max-width: 1280px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 18px;
+    padding: 0 4px;
+  }
+
+  .slide-dots {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .dot.active {
+    background: #bf4520;
+    transform: scale(1.2);
+  }
+
+  .key-hint {
+    font-size: 12px;
+    color: #9ca3af;
+  }
+  kbd {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 11px;
+    color: #d1d5db;
+  }
+</style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <div class="nav-bar">
+    <div class="deck-info">
+      <span class="brand-badge">Presentation</span>
+      <span class="deck-title">Diagram Design: AI-Powered Diagram Generation</span>
+    </div>
+    <div class="download-links">
+      <a href="aether_engine.html" target="_blank" class="btn" style="background: rgba(240, 138, 89, 0.18); border-color: #f08a59; color: #f08a59;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        3D Aether Engine
+      </a>
+      <a href="diagram_design_presentation.pptx" download class="btn btn-accent">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download PPTX
+      </a>
+      <a href="diagram_design_presentation.pdf" download class="btn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Download PDF
+      </a>
+    </div>
+  </div>
+
+  <!-- Stage Container -->
+  <div class="stage-container" id="stage">
+    <div class="slide active" id="slide-1">
+      <img src="slide1_about.png" alt="Slide 1 - About Diagram Design">
+    </div>
+    <div class="slide" id="slide-2">
+      <img src="slide2_how_it_works.png" alt="Slide 2 - How It Works">
+    </div>
+    <div class="slide" id="slide-3">
+      <img src="slide3_advantages.png" alt="Slide 3 - Advantages">
+    </div>
+    <div class="slide" id="slide-4">
+      <img src="slide4_use_cases.png" alt="Slide 4 - Application Areas">
+    </div>
+    <div class="slide" id="slide-5">
+      <img src="slide5_future_conclusion.png" alt="Slide 5 - Future Scope and Conclusion">
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <div class="controls-bar">
+    <button class="btn" onclick="prevSlide()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+      Previous
+    </button>
+
+    <div class="slide-dots">
+      <span class="dot active" onclick="goToSlide(1)"></span>
+      <span class="dot" onclick="goToSlide(2)"></span>
+      <span class="dot" onclick="goToSlide(3)"></span>
+      <span class="dot" onclick="goToSlide(4)"></span>
+      <span class="dot" onclick="goToSlide(5)"></span>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 14px;">
+      <span class="key-hint">Navigate with <kbd>←</kbd> <kbd>→</kbd> keys</span>
+      <button class="btn" onclick="nextSlide()">
+        Next
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    let currentSlide = 1;
+    const totalSlides = 5;
+
+    function showSlide(n) {
+      if (n < 1) n = 1;
+      if (n > totalSlides) n = totalSlides;
+      currentSlide = n;
+
+      for (let i = 1; i <= totalSlides; i++) {
+        document.getElementById(`slide-${i}`).classList.remove('active');
+        document.querySelectorAll('.dot')[i - 1].classList.remove('active');
+      }
+
+      document.getElementById(`slide-${currentSlide}`).classList.add('active');
+      document.querySelectorAll('.dot')[currentSlide - 1].classList.add('active');
+    }
+
+    function prevSlide() { showSlide(currentSlide - 1); }
+    function nextSlide() { showSlide(currentSlide + 1); }
+    function goToSlide(n) { showSlide(n); }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === 'Space') nextSlide();
+      if (e.key === 'ArrowLeft') prevSlide();
+    });
+  </script>
+</body>
+</html>
